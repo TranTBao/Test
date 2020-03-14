@@ -100,7 +100,7 @@ void Snack::Handling_snack() {
 
 		So_Dot++;
 
-		srand(time(0));
+		
 		x = rand() % (Rong - 2*SQUARE) + SQUARE;    //cập nhật lại tọa độ food.
 		x = x - x % SQUARE;
 
@@ -123,7 +123,7 @@ void Snack::Handling_snack() {
 
 void Food::Init_food() {
 
-	srand(time(0));
+	
     x = rand() % (Rong - 2 * SQUARE) + SQUARE ;
 	x = x - x % SQUARE;
 

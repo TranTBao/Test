@@ -40,7 +40,7 @@ static const size_t SQUARE = 20;
 
 static int So_Dot ; // Số đốt mặc định của snack
 
-static int x; // Tọa độ food
+static int x; // Tọa độ cập nhật food
 static int y;
 
 

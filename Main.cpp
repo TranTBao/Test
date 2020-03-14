@@ -7,6 +7,7 @@ int main() {
 
 	InitWindow(Rong, Cao, "Bao");
 	SetTargetFPS(10);
+	srand(time(0));
 
 	Map A;
 	Snack B;
