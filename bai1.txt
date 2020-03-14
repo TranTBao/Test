@@ -1,9 +1,0 @@
-moi them vao ne!
-
-<<<<<<< HEAD
-them o branch master
-
-=======
-
-dang sua o branch bao
->>>>>>> bao
