@@ -41,7 +41,7 @@ void Map::Show_map() {
 
 //  CLASS SNACK
 void Snack::Init_snack() {
-
+	So_Dot = 3;
 	this->snack = new Vector2[So_Dot];
 
 	this->snack[0].x = 60;
@@ -81,10 +81,10 @@ void Snack::Move_snack() {
 
 
 	if (!gameover) {
-		if (IsKeyPressed(KEY_W) && this->status != DOWN) this->status = UP;
-		else if (IsKeyPressed(KEY_S) && this->status != UP) this->status = DOWN;
-		else if (IsKeyPressed(KEY_A) && this->status != RIGHT) this->status = LEFT;
-		else if (IsKeyPressed(KEY_D) && this->status != LEFT) this->status = RIGHT;
+		if (IsKeyPressed(KEY_W)|| IsKeyPressed(KEY_UP) && this->status != DOWN) this->status = UP;
+		else if (IsKeyPressed(KEY_S) || IsKeyPressed(KEY_DOWN) && this->status != UP) this->status = DOWN;
+		else if (IsKeyPressed(KEY_A) || IsKeyPressed(KEY_LEFT) && this->status != RIGHT) this->status = LEFT;
+		else if (IsKeyPressed(KEY_D) || IsKeyPressed(KEY_RIGHT) && this->status != LEFT) this->status = RIGHT;
 	}
 
 	if (this->status == UP) this->snack[0].y -= 20;
@@ -95,6 +95,19 @@ void Snack::Move_snack() {
 
 
 void Snack::Handling_snack() {
+
+	if (this->snack[0].x == x && this->snack->y == y) {
+
+		So_Dot++;
+
+		srand(time(0));
+		x = rand() % 760 + SQUARE;    //cập nhật lại tọa độ food.
+		x = x - x % SQUARE;
+
+		y = rand() % 420 + SQUARE;
+		y = y - y % SQUARE;
+
+	}
 
 	if (this->snack[0].x < SQUARE || this->snack[0].x == Rong - SQUARE || this->snack[0].y < SQUARE || this->snack[0].y == Cao - SQUARE) gameover = true;
 
@@ -111,24 +124,23 @@ void Snack::Handling_snack() {
 void Food::Init_food() {
 
 	srand(time(0));
-	int x = rand() % 760 + SQUARE ;
+    x = rand() % 760 + SQUARE ;
 	x = x - x % SQUARE;
-	int y = rand() % 420 + SQUARE;
+
+    y = rand() % 420 + SQUARE;
 	y = y - y % SQUARE;
 
 
-
-    food.x = x;
-	food.y = y;
-	
-
-	
 }
 
 void Food::Show_food() {
 
+	food.x = x;
+	food.y = y;
 
 	DrawRectangle(food.x, food.y, SQUARE, SQUARE, PINK);
+
+	
 }
 
 

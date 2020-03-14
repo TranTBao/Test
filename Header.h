@@ -1,4 +1,4 @@
-#include<raylib.h>
+﻿#include<raylib.h>
 #include<cstdlib>
 #include<ctime>
 
@@ -37,9 +37,13 @@ static bool gameover = false;
 static const int Rong = 800;
 static const int Cao = 460;
 static const size_t SQUARE = 20;
-static int So_Dot = 3;
+
+static int So_Dot ; // Số đốt mặc định của snack
+
+static int x; // Tọa độ food
+static int y;
 
 
 
 // funtion
-static void Show_map();
+

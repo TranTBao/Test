@@ -6,7 +6,7 @@
 int main() {
 
 	InitWindow(Rong, Cao, "Bao");
-	SetTargetFPS(12);
+	SetTargetFPS(10);
 
 	Map A;
 	Snack B;
@@ -20,9 +20,10 @@ int main() {
 
 		A.Show_map();
 		B.Show_snack();
+		C.Show_food();
 		B.Move_snack();
 		B.Handling_snack();
-		C.Show_food();
+		
 		
 	}
 
