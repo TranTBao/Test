@@ -101,10 +101,10 @@ void Snack::Handling_snack() {
 		So_Dot++;
 
 		srand(time(0));
-		x = rand() % 760 + SQUARE;    //cập nhật lại tọa độ food.
+		x = rand() % (Rong - 2*SQUARE) + SQUARE;    //cập nhật lại tọa độ food.
 		x = x - x % SQUARE;
 
-		y = rand() % 420 + SQUARE;
+		y = rand() % (Cao - 2*SQUARE) + SQUARE;
 		y = y - y % SQUARE;
 
 	}
@@ -124,10 +124,10 @@ void Snack::Handling_snack() {
 void Food::Init_food() {
 
 	srand(time(0));
-    x = rand() % 760 + SQUARE ;
+    x = rand() % (Rong - 2 * SQUARE) + SQUARE ;
 	x = x - x % SQUARE;
 
-    y = rand() % 420 + SQUARE;
+    y = rand() % (Cao - 2 * SQUARE) + SQUARE;
 	y = y - y % SQUARE;
 
 
